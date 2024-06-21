@@ -1,0 +1,53 @@
+{
+  "name": "amq-jolokia",
+  "version": "1.0.0",
+  "description": "An api server used to access jolokia endpoints of ActiveMQ Artemis Messaging Broker.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-config": "cp -r src/config dist/config",
+    "build": "rm -rf ./dist && tsc && yarn copy-config",
+    "start": "node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaohoward/amq-jolokia.git"
+  },
+  "keywords": [
+    "amq",
+    "jolokia",
+    "api-server"
+  ],
+  "author": "Howard Gao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaohoward/amq-jolokia/issues"
+  },
+  "homepage": "https://github.com/gaohoward/amq-jolokia#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/js-yaml": "^4.0.9",
+    "jest": "^29.7.0",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@types/base-64": "^1.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node-fetch": "^2.6.11",
+    "base-64": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-openapi-validator": "^5.2.0",
+    "express-rate-limit": "^7.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "nock": "^13.5.4",
+    "node-fetch": "^3.3.2",
+    "swagger-routes-express": "^3.3.2"
+  }
+}
