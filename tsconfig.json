@@ -12,5 +12,9 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "moduleResolution": "NodeNext",
-  }
+  },
+  "exclude": [
+    "./dist",
+    "./tsup.config.ts",
+  ]
 }

@@ -7,17 +7,14 @@ import * as YAML from 'js-yaml';
 import * as fs from 'fs';
 import path from 'path';
 import cors from 'cors';
-import { fileURLToPath } from 'url';
 
 import * as api from '../api/controllers/index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 export let API_SUMMARY: Summary;
 
-const createServer = async (staticBaseDir: string): Promise<Express> => {
-  const yamlSpecFile = path.join(__dirname, '../config/openapi.yml');
+const createServer = async (__dirname: string, staticBaseDir?: string): Promise<Express> => {
+  console.log("__dirname is", __dirname);
+  const yamlSpecFile = path.join(__dirname, 'config/openapi.yml');
   console.log('parseing api.yaml', yamlSpecFile);
 
   const ymlData = fs.readFileSync(yamlSpecFile, 'utf-8');

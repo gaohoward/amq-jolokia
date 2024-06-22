@@ -10,6 +10,8 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+console.log("__dirname in app is", __dirname);
+
 let staticBase = "";
 if (process.argv[2] === undefined) {
   console.log('no static dir specified');
@@ -17,7 +19,7 @@ if (process.argv[2] === undefined) {
   staticBase = path.resolve(process.argv[2]);
 }
 
-createServer(staticBase)
+createServer(__dirname, staticBase)
   .then((server) => {
     server.listen(9001, () => {
       console.info(`Listening on http://0.0.0.0:9001`);
